@@ -11,6 +11,10 @@ use yii\widgets\ActiveForm;
 <div class="cron-task-form">
 
     <?php $form = ActiveForm::begin(); ?>
+    
+    <?= $form->field($model, 'name')->textInput(['maxLength' => true, 'placeholder' => 'Task name']) ?>
+    
+    <?= $form->field($model, 'description')->textInput(['placeholder' => 'Task description']) ?>
 
     <?= $form->field($model, 'schedule')->textInput(['maxlength' => true, 'placeholder' => 'Crontab schedule expression']) ?>
 

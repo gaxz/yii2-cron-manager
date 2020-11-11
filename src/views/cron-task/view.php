@@ -9,14 +9,15 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model gaxz\crontab\models\CronTask */
 
-$this->title = "ID:{$model->id} ({$model->route})";
+$this->title = $model->getPrettyName();
+    
 $this->params['breadcrumbs'][] = ['label' => 'Cron Tasks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cron-task-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+        
     <p>
 
         <?= Html::a('Execute', ['execute', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -35,6 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            'name',
+            'description',
             'created_at',
             'updated_at',
             'schedule',

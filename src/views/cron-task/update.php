@@ -5,7 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model gaxz\crontab\models\CronTask */
 
-$this->title = "Update ID:{$model->id} ({$model->route})";;
+$this->title = "Update {$model->getPrettyName()}";
+
 $this->params['breadcrumbs'][] = ['label' => 'Cron Tasks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

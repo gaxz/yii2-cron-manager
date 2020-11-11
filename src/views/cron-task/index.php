@@ -29,7 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 [
                     'attribute' => 'id',
-                    'headerOptions' => ['style' => 'width:8%'],
+                    'headerOptions' => ['style' => 'width:5%'],
+                ],
+                [
+                    'attribute' => 'name',
+                    'headerOptions' => ['style' => 'width:14%']
                 ],
                 [
                     'attribute' => 'updated_at',

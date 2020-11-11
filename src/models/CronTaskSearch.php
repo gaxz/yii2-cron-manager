@@ -18,7 +18,7 @@ class CronTaskSearch extends CronTask
     {
         return [
             [['id', 'is_enabled'], 'integer'],
-            [['created_at', 'updated_at', 'schedule', 'route'], 'safe'],
+            [['created_at', 'updated_at', 'schedule', 'route', 'name', 'description'], 'safe'],
         ];
     }
 
@@ -65,7 +65,9 @@ class CronTaskSearch extends CronTask
         ]);
 
         $query->andFilterWhere(['like', 'schedule', $this->schedule])
-            ->andFilterWhere(['like', 'route', $this->route]);
+            ->andFilterWhere(['like', 'route', $this->route])
+            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }
