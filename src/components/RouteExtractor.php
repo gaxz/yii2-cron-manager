@@ -28,7 +28,7 @@ class RouteExtractor extends \ReflectionClass
 
                 $route = "/" . $this->hyphenize($class) . "/" . $this->hyphenize($action);
 
-                $routes[$route] = $this->normalizeName($route);
+                $routes[$route] = $this->normalizeName(strtolower($route));
             }
         }
 
